@@ -1,0 +1,34 @@
+.cards {
+    margin-top: 20px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+    border: 1px solid black;
+}
+
+.card img{
+  width: 100%;
+  height: 300px;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+}
+
+.features span {
+    margin-left: 10px;
+}
+
+.card__details button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+}
+
+.card__details span {
+    margin-left: 50px;
+}
