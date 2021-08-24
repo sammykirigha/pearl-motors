@@ -23,23 +23,29 @@ const Cars = () => {
         <div className="cards">
             {
                 cars?.map((car) => (
-                <div className="card" key={car.id}>
-                    <img src={car.image} />
-                    <div className="card__details">
-                        <span><strong>Features</strong></span>
-                        <div className="features">
-                            <span>Make: {car.CarType}</span>
-                            <span>Model : {car.CarType}</span>
-                            <span>Milleage: {car.Milleage}</span>
-                            <span>Year of Production : {car.Year}</span>
-                            <span>Price of the car :  ${car.PurchasePrice}</span>
+                    <div className="card" key={car.id}>
+                        <div className="image">
+                          <img src={car.image} />
                         </div>
-                        <button>Details</button>
+                        <span className="card_features"><strong>Features</strong></span>
+                        <div className="card__details">
+                            <span className="card_header"><strong>Main Info</strong></span>
+                             <div className="features">
+                                <span>Make  : <span>{car.CarType}</span> </span>
+                                <span>Model : <span>{car.CarType}</span> </span>
+                                <span>Milleage  : <span>{car.Milleage}</span> </span>
+                                <span>Year of Production :  <span>{car.Year}</span> </span>
+                                <span>Price of the car :  <span>Ksh{car.PurchasePrice}</span> </span>
+                            </div>
+                            <div className="buttons">
+                                <button>Add To Cart</button>
+                                <button>More details</button>
+                            </div>
+                            </div>
                     </div>
-                </div>
                 ))
             }
-    </div>
+        </div>
     )
 }
 

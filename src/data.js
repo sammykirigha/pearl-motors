@@ -55,7 +55,7 @@ const cars = [
         },
         {
             id: 4,
-            PurchasePrice: 550000,
+            PurchasePrice: 5500000,
             Year: 2019,
             CarType: "Toyota Prado",
             image: "https://cdn.pixabay.com/photo/2018/03/21/02/39/toyota-3245397_960_720.jpg",
