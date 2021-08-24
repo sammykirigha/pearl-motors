@@ -39,3 +39,36 @@
 	margin-top: 15px;
 	color: white;
 }
+
+@media (max-width: 556px) {
+.header {
+	height: auto;
+}
+.nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+}
+
+@media (max-width: 348px) {
+.header {
+	height: auto;
+	width: 100%;
+}
+.nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.nav span{
+   font-size: 15px;
+}
+
+.nav__search input {
+	width: 150px;
+}
+}

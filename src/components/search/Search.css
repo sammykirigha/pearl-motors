@@ -1,12 +1,65 @@
 .search {
+    margin-top: 20px;
+    padding: 10px;
     width: 100%;
-    height: 80px;
-    background-color: darkkhaki;
+    height: auto;
+    object-fit: contain;
+    /* background-color: darkkhaki; */
     display: flex;
     justify-content: space-around;
-    align-items: center;
+
 }
+
+.search__make input {
+        width: 200px;
+        border: none;
+    }
+
+.search__model input {
+        width: 200px;
+        border: none;
+    }
+
+.search__price input {
+        width: 200px;
+        border: none;
+    }
 
 .search div {
     margin-top: 15px;
+    
+}
+
+@media (max-width : 546px) {
+    .search {
+        display: flex;
+        flex-direction: column;
+    }
+     .search__make input {
+        width: 100px;
+    }
+    .search__model input {
+        width: 100px;
+    }
+
+    .search__price input {
+        width: 100px;
+    }
+}
+
+
+@media (max-width : 857px) {
+    .search {
+        display: flex;
+    }
+    .search__make input {
+        width: 150px;
+    }
+    .search__model input {
+        width: 150px;
+    }
+
+    .search__price input {
+        width: 150px;
+    }
 }
