@@ -3,20 +3,20 @@ import './Cars.css'
 import {useSelector, useDispatch} from 'react-redux'
 
 import { useEffect } from 'react'
-import { getCars } from '../redux/actions/carsAction'
 import { Link } from 'react-router-dom'
+import { loadCars } from '../../redux/actions/carsAction'
 
 
 
 const Cars = () => {
     const {cars} = useSelector(state => state.cars)
-     
-    cars.map(car => console.log(car.CarType))
-
+    
+    cars.map(car => console.log(car.id))
+ 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getCars())
+        dispatch(loadCars())
     
     },[dispatch])
 
