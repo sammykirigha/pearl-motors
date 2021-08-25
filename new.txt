@@ -1,32 +1,28 @@
-import React from 'react'
-import './Cars.css'
-import {useSelector, useDispatch} from 'react-redux'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import { getCar } from '../redux/actions/carsAction';
+import './Details.css'
 
-import { useEffect } from 'react'
-import { getCars } from '../redux/actions/carsAction'
-import { Link } from 'react-router-dom'
+const Details = () => {
 
-
-
-const Cars = () => {
-    const {cars} = useSelector(state => state.cars)
-     
-    cars.map(car => console.log(car.CarType))
-
+    const {id} = useParams();
+    console.log("my id", id);
+    const {cars} = useSelector((state) => state.cars);
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getCars())
-    
-    },[dispatch])
-
+        dispatch(getCar(id))
+    }, [dispatch])
+    cars.map(car => console.log(car.id))
+    // console.log(car.id)
     return (
-        <div className="cards">
+        <div>
             {
-                cars?.map((car) => (
+            cars?.map((car) => (
                     <div className="card" key={car.id}>
                         <div className="image">
-                          <img src={car.image} />
+                          <img src={car.image} alt="details"/>
                         </div>
                         <span className="card_features"><strong>Features</strong></span>
                         <div className="card__details">
@@ -40,7 +36,6 @@ const Cars = () => {
                             </div>
                             <div className="buttons">
                                 <Link>Add To Cart</Link>
-                                <Link className="link" to={`/details/${car.id}`}>More details</Link>
                             </div> 
                             </div>
                     </div>
@@ -50,4 +45,4 @@ const Cars = () => {
     )
 }
 
-export default Cars
+export default Details

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;1,500&display=swap');
+.container-details{
+	margin-top: 20px;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.carousel-detail {
+    height: 60vh;
+    
+  }
+  .card-details{
+      align-items: center;
+  }
+  .card-details span{
+      display: block;
+      margin-left: 450px;
+      margin-top: 15px;
+      font-family: 'Ubuntu';
+  }
+
+  
+  .carousel-item{
+    height: 60vh;
+    width: 50%;
+  }

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;1,500&display=swap');
+.footer{
+    background-color: #ffffff;
+    font-family: 'Ubuntu';
+}
+
+.pearlfooter{
+    color: red;
+    font-family: 'Ubuntu';
+    text-decoration: none;
+    font-weight: 700;
+}
+.footer-div{
+    background-color: #24252A;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
