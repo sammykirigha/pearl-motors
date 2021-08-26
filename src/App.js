@@ -16,7 +16,7 @@ function App() {
         <Route path='/details/:id' component={Details} /> 
         <Route path='/cart/:id' component={Cart} />  
       </Switch>
-      <Footer/>
+      
     </div>
   );
 }

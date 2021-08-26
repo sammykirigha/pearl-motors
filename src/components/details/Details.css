@@ -1,38 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;1,500&display=swap');
 .container-details{
-	margin-top: 20px;
-	display: grid;
-	grid-gap: 10px;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	display:flex;
+
 }
-.carousel-detail {
-    height: 60vh;
-    
-  }
-  .card-details{
-      align-items: center;
-  }
-  .card-details span{
-      display: block;
-      margin-left: 450px;
-      margin-top: 15px;
-      font-family: 'Ubuntu';
+
+.carousel-details {
+  display: inline-block;
+  position: absolute;
+  left: 5;
+}
+
+.detai {
+border: 2px solid crimson ;
+  display: inline-block;
+  align-items: flex-start;
+  position: absolute;
+  margin-left:520px;
+  margin-top: 20px;
+}
+.detai span {
+  display: block;
+  font-family: 'Ubuntu';
+    margin-top: 2px;
   }
 
+.carinfo {
+ 
+  display: inline-block;
+  align-items: flex-start;
+  position: absolute;
+  margin-left:1030px;
+  width:200px;
+  
+  margin-top: 50px;
+  border: 2px solid oldlace;
+}
+
+.carinfo i {
+ 
+  
+  margin-left:30px;
+  margin-right: 20px;
+  
+}
+
+
+
+
+  .price{
+      display: block;
+      font-family: 'Ubuntu';
+      margin-left:20px;
+  }
+  .addto{
+    background: orangered;
+    color: white;
+    font-family: 'Ubuntu';
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 3px;
+    margin-left:30px;
+    margin-bottom:30px;
+   
+  }
+ 
+  
+.carousel{
+    height: 20vh;
+    
+  }
   
   .carousel-item{
     height: 60vh;
-    width: 50%;
+    width: 30%;
   }
+.footer{
+  margin-top: 400px;
+  width: 100%;
+}
 
-  .details {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-  }
 
-  .card__info {
+  /* .card__info {
     background-color: rgb(53, 197, 197);
-  }
+  } */
 

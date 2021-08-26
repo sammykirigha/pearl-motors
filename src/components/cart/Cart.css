@@ -1,0 +1,33 @@
+.checkout-container{
+    display: flex;
+    flex-direction: row;
+   
+}
+.card_info{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.card_info i {
+ 
+  
+    margin-left:30px;
+    margin-right: 20px;
+    
+  }
+  .card_info span {
+ font-family: 'Ubuntu';
+    
+  }
+
+  .addto{
+    background: orangered;
+    color: white;
+    font-family: 'Ubuntu';
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 3px;
+    margin-left:30px;
+    margin-bottom:30px;
+   
+  }

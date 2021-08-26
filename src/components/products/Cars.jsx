@@ -26,7 +26,7 @@ const Cars = () => {
                 cars?.map((car) => (
                     <div className="card" key={car.id}>
                         <div className="image">
-                          <img src={car.images[0]} />
+                          <img src={car.images[0]}  alt="car"/>
                         </div>
                         <span className="card_features"><strong>Features</strong></span>
                         <div className="card__details">
