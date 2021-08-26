@@ -4,49 +4,54 @@ import './Details.css'
 import ten from "../images/ten.png"
 import nine from "../images/ford.png"
 import five from "../images/rangerover.jpg"
-import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import Image from '../image/Image'
+import { Link, useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { loadCar } from '../../redux/actions/carsAction'
 
 const Details = () => {
   const { id } = useParams();
-  const { cars, loading, error } = useSelector((state) => state.cars)
-  //  console.log(id);
-  cars.map(car => console.log(car.id))
-    return (
-      <>
-       <div className="container-details">
-          <div className='carousel-detail'>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-indicators bg-transparent">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-            <div class="carousel-inner">
-          <div class="carousel-item  active " style={{background:`url(https://cdn.pixabay.com/photo/2016/07/09/21/47/car-1506922__340.jpg)`, backgroundPosition:'center', backgroundSize:"contain" ,backgroundRepeat:"no-repeat"}}></div>
-          <div class="carousel-item"  style={{background:`url(https://cdn.pixabay.com/photo/2016/04/19/06/03/mercedes-1338063__340.jpg)`, backgroundPosition:'center' ,backgroundSize:"contain" ,backgroundRepeat:"no-repeat"}}></div>
-          <div class="carousel-item card-3" style={{background:`url(https://cdn.pixabay.com/photo/2016/06/20/22/32/mercedes-benz-1470115__340.jpg)`, backgroundPosition:'center',backgroundSize:'contain' ,backgroundRepeat:"no-repeat"}}></div>
-        </div>
-             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-               <span class="visually-hidden">Previous</span>
-             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-             <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-      </div>
-      </div>
+  const {car} = useSelector((state) => state.car)
+   console.log(car);
+  const dispatch = useDispatch()
+  
 
-              <div className='card-details'>
-                 <span>Make  : Benz </span>
-                 <span>Model : 2018 </span>
-                 <span>Milleage  : 30,000 </span>
-                 <span>Year of Production : 2011 </span>
-                 <span>Price of the car :  Ksh1,200,000 </span>
-              </div>
-    </>
+  useEffect(() => {
+     dispatch(loadCar(id))
+  }, [dispatch])
+  
+  console.log(id);
+  return (
+    <div className="details">
+      <Image car={car} />
+      <div className="card_info">
+        <div className='card-details'>
+          <div className="div__one">
+            <span>Make  : {car.CarType} </span>
+            <span>Model : {car.CarType} </span>
+            <span>Milleage(km)  : {car.Milleage} </span>
+            <span>Year of Production : {car.Year} </span>
+            <span>Transimition :  {car.Transmission} </span>
+          </div>
+          <div className="div__two">
+            <span>Car Condition: {car.condition}</span>
+            <span>Car Fuel Type: {car.FuelType} </span>
+            <span>Engine Size: {car.FuelType}</span>
+            <span>Exterior Color: {car.ExteriorColor}</span>
+            <span>Interior Color: {car.InteriorColor}</span>
+          </div> 
+        </div>
+      </div>
+      <div className="car__info">
+        <i class="fas fa-angle-left"></i>
+        <span>6</span>
+        <i class="fas fa-angle-right"></i>
+        <span>Price: </span>
+      </div>
+      <Link to={`/cart/${car.id}`}>ADD To Cart</Link>
+     
+      </div>
     )
 }
 

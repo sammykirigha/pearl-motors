@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { call, put, takeLatest } from 'redux-saga/effects'
-import { getCarSuccess } from '../redux/actions/carsAction';
+import { getCarFail, getCarSuccess } from '../redux/actions/carsAction';
+import { CAR } from '../redux/types';
 
 const getCar = async (id) => {
     const { data } = await axios.get(`http://my-json-server.typicode.com/sammykirigha/my-vehicles/cars/${id}`)
@@ -8,17 +9,18 @@ const getCar = async (id) => {
     return data;
 }
 
-function* handlesGetCars(action) {
-    const { id } = action
-    console.log("my ids",id);
+function* handlesGetCar(action) {
+    // console.log("m dataaaaaaa",action);
+
     try {
-        const cars = yield call(getCar, id);
-        yield put(getCarSuccess())
+        const car = yield call(getCar, action.id);
+        yield put(getCarSuccess(car))
     } catch (error) {
-        yield put(getCarsFail('Failed to load cars'))
+        yield put(getCarFail('Failing to load...'))
     }
 }
 
-export default function* carsSaga() {
-    yield takeLatest(CARS.GET_CARS_REQUEST, handlesGetCars)
+export default function* carSaga() {
+    console.log("got herreeeeee");
+    yield takeLatest(CAR.GET_CAR_REQUEST, handlesGetCar)
 }

@@ -18,15 +18,16 @@ export const getCarsFail = (error) => ({
 })
 
 
-export const loadCar = () => {
+export const loadCar = (id) => {
     return ({
-        type: CAR.GET_CAR_REQUEST
+        type: CAR.GET_CAR_REQUEST,
+        id
     });
 };
 
-export const getCarSuccess = (id) => ({
+export const getCarSuccess = (car) => ({
     type: CAR.GET_CAR_SUCCESS,
-    id
+    car
 });
 
 export const getCarFail = (error) => ({

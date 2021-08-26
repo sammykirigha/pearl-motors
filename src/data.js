@@ -30,7 +30,7 @@ const cars = [
             condition: "Foreign Used",
             Transmission: "Automatic",
             Drive: "2WD - 4DW ",
-            Milleage: "50,000km",
+            Milleage: 50000,
             EngineSize: "1300cc",
             ExteriorColor: "Black",
             InteriorColor: "Jet Black"

@@ -39,7 +39,7 @@ const Cars = () => {
                                 <span>Price of the car :  <span>Ksh{car.PurchasePrice}</span> </span>
                             </div>
                             <div className="buttons">
-                                <Link>Add To Cart</Link>
+                                <Link to={`/cart/${car.id}`}>Add To Cart</Link>
                                 <Link className="link" to={`/details/${car.id}`}>More details</Link>
                             </div> 
                             </div>

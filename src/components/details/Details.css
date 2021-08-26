@@ -24,3 +24,15 @@
     height: 60vh;
     width: 50%;
   }
+
+  .details {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card__info {
+    background-color: rgb(53, 197, 197);
+  }
+

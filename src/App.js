@@ -4,6 +4,7 @@ import Footer from './components/footer/Footer';
 import { Route, Switch } from 'react-router-dom';
 import Details from './components/details/Details';
 import Home from './components/Home';
+import Cart from './components/cart/Cart';
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-         <Route path='/details/:id'  component={Details} />  
+        <Route path='/details/:id' component={Details} /> 
+        <Route path='/cart/:id' component={Cart} />  
       </Switch>
       <Footer/>
     </div>
