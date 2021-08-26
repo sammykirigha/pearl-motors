@@ -14,15 +14,13 @@ import Footer from '../footer/Footer'
 const Details = () => {
   const { id } = useParams();
   const {car} = useSelector((state) => state.car)
-   console.log(car);
   const dispatch = useDispatch()
   
-
   useEffect(() => {
-     dispatch(loadCar(id))
+    dispatch(loadCar(id))
   }, [dispatch])
+console.log(car.length);
   
-  console.log(id);
   return (
     
   <div className="container-details">
@@ -72,7 +70,7 @@ const Details = () => {
           <div className="div_one">
             <span>Make  : {car.CarType} </span>
             <span>Model : {car.CarType} </span>
-            <span>Milleage(km)  : {car.Milleage} </span>
+            <span>Milleage  : {car.Mileage} </span>
             <span>Year of Production : {car.Year} </span>
             <span>Transimition :  {car.Transmission} </span>
           </div>

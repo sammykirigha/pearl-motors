@@ -17,10 +17,18 @@ const Cart = () => {
 
     return (
         <div className="details">
+<<<<<<< Updated upstream
             
            <div className="checkout-container">
                  <div className="card_inf" style={{background:`url("https://cdn.pixabay.com/photo/2021/02/14/12/13/audi-6014250_960_720.jpg")`,width:"80px",height:"80px", backgroundPosition:'center',backgroundSize:"contain" ,backgroundRepeat:"no-repeat"}}></div>
                    <div className="card_info"><i class="fas fa-angle-left"></i>
+=======
+            <div className="image">
+                <img src={car.image1} />
+            </div>
+            <div className="card_info">
+                    <i class="fas fa-angle-left"></i>
+>>>>>>> Stashed changes
                     <span>6</span>
                     <i class="fas fa-angle-right"></i>
                     <span>Price:<span style={{color:'red'}}>28,000,000</span> </span>

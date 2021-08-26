@@ -5,6 +5,7 @@ import createSagaMiddleware, { END } from 'redux-saga';
 import rootSaga from '../sagas';
 
 import { carReducer, carsReducer } from './reducers/carsReducers';
+import { cartReducer } from './reducers/CartReducers';
 
 export default function configureStore() {
     const sagaMiddleware = createSagaMiddleware();
@@ -12,7 +13,8 @@ export default function configureStore() {
     const store = createStore(
         combineReducers({
             cars: carsReducer,
-            car: carReducer
+            car: carReducer,
+            cart: cartReducer
         }),
         composeWithDevTools(applyMiddleware(sagaMiddleware))
     )

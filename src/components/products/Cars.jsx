@@ -26,7 +26,11 @@ const Cars = () => {
                 cars?.map((car) => (
                     <div className="card" key={car.id}>
                         <div className="image">
+<<<<<<< Updated upstream
                           <img src={car.images[0]}  alt="car"/>
+=======
+                          <img src={car.image1} />
+>>>>>>> Stashed changes
                         </div>
                         <span className="card_features"><strong>Features</strong></span>
                         <div className="card__details">
@@ -34,7 +38,7 @@ const Cars = () => {
                              <div className="features">
                                 <span>Make  : <span>{car.CarType}</span> </span>
                                 <span>Model : <span>{car.CarType}</span> </span>
-                                <span>Milleage  : <span>{car.Milleage}</span> </span>
+                                <span>Milleage  : <span>{car.Mileage}</span> </span>
                                 <span>Year of Production :  <span>{car.Year}</span> </span>
                                 <span>Price of the car :  <span>Ksh{car.PurchasePrice}</span> </span>
                             </div>

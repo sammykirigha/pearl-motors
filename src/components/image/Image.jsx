@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const Image = ({car}) => {
     return (
-        <div style={{width: '400px', height: 'auto'}}>
+        <div style={{width: '600px', height: 'auto'}}>
 
              <div className="container-details">
                 <div className='carousel-detail'>
@@ -15,9 +15,9 @@ const Image = ({car}) => {
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item  active " style={{ background: `url(${car.image})`, backgroundPosition: 'center', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
-                            <div class="carousel-item" style={{ background: `url(${car.image})`, backgroundPosition: 'center', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
-                            <div class="carousel-item card-3" style={{ background: `url(${car.image})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: "no-repeat" }}></div>
+                            <div class="carousel-item  active " style={{ background: `url(${car.image2})`, backgroundPosition: 'center', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+                            <div class="carousel-item" style={{ background: `url(${car.image3})`, backgroundPosition: 'center', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+                            <div class="carousel-item card-3" style={{ background: `url(${car.image4})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: "no-repeat" }}></div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
