@@ -11,7 +11,7 @@ import { loadCars } from '../../redux/actions/carsAction'
 const Cars = () => {
     const {cars} = useSelector(state => state.cars)
     
-    cars.map(car => console.log(car.id))
+    cars.map(car => console.log(car.images))
  
     const dispatch = useDispatch()
 
@@ -26,7 +26,7 @@ const Cars = () => {
                 cars?.map((car) => (
                     <div className="card" key={car.id}>
                         <div className="image">
-                          <img src={car.image} />
+                          <img src={car.images[0]} />
                         </div>
                         <span className="card_features"><strong>Features</strong></span>
                         <div className="card__details">
