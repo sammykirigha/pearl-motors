@@ -19,6 +19,8 @@ export default function configureStore() {
         composeWithDevTools(applyMiddleware(sagaMiddleware))
     )
 
+    console.log(cartReducer);
+
     store.runSaga = sagaMiddleware.run;
     store.close = () => store.dispatch(END)
 

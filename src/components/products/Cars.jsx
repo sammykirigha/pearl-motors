@@ -5,13 +5,12 @@ import {useSelector, useDispatch} from 'react-redux'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { loadCars } from '../../redux/actions/carsAction'
+import { addItem } from '../../redux/actions/CartActions'
 
 
 
 const Cars = () => {
-    const {cars} = useSelector(state => state.cars)
-    
-    cars.map(car => console.log(car.images))
+    const { cars } = useSelector(state => state.cars)
  
     const dispatch = useDispatch()
 
@@ -26,11 +25,7 @@ const Cars = () => {
                 cars?.map((car) => (
                     <div className="card" key={car.id}>
                         <div className="image">
-<<<<<<< Updated upstream
-                          <img src={car.images[0]}  alt="car"/>
-=======
                           <img src={car.image1} />
->>>>>>> Stashed changes
                         </div>
                         <span className="card_features"><strong>Features</strong></span>
                         <div className="card__details">
@@ -43,7 +38,7 @@ const Cars = () => {
                                 <span>Price of the car :  <span>Ksh{car.PurchasePrice}</span> </span>
                             </div>
                             <div className="buttons">
-                                <Link to={`/cart/${car.id}`}>Add To Cart</Link>
+                                <Link onClick={() => dispatch(addItem(car))}>Add To Cart</Link>
                                 <Link className="link" to={`/details/${car.id}`}>More details</Link>
                             </div> 
                             </div>

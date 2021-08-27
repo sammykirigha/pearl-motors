@@ -10,56 +10,47 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { loadCar } from '../../redux/actions/carsAction'
 import Footer from '../footer/Footer'
+import { addItem } from '../../redux/actions/CartActions'
 
 const Details = () => {
   const { id } = useParams();
-  const {car} = useSelector((state) => state.car)
+  const { car } = useSelector((state) => state.car)
+  const  quantity = useSelector((state) => state.cartItems)
+
+  console.log(quantity)
   const dispatch = useDispatch()
   
   useEffect(() => {
     dispatch(loadCar(id))
   }, [dispatch])
-console.log(car.length);
   
   return (
     
   <div className="container-details">
 
-  <div className="carousel-details">
-
-<div className="carousel-details" style={{width:'500px', height:'300px'}}>
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators bg-transparent">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  
-    
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item  active " style={{background:`url("https://cdn.pixabay.com/photo/2021/02/14/12/13/audi-6014250_960_720.jpg")`, backgroundPosition:'center',backgroundSize:"contain" ,backgroundRepeat:"no-repeat"}}>
-  
+     <div className="carousel-details">
+      <div className="carousel-details" style={{width:'500px', height:'300px'}}>
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators bg-transparent">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> 
+      </div>
+       <div class="carousel-inner">
+         <div class="carousel-item  active " style={{background:`url(${car.image2})`, backgroundPosition:'center',backgroundSize:"contain" ,backgroundRepeat:"no-repeat"}}></div>
+              <div class="carousel-item" style={{ background: `url("${car.image3}")`, backgroundPosition:'center' ,backgroundSize:"contain" ,backgroundRepeat:"no-repeat"}}></div>
+              <div class="carousel-item card-3" style={{ background: `url("${car.image3}")`, backgroundPosition:'center',backgroundSize:'cortain' ,backgroundRepeat:"no-repeat"}}></div>
+       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Previous</span>
+     </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="carousel-item"  style={{background:`url("https://cdn.pixabay.com/photo/2020/07/19/09/55/man-5419522__340.jpg")`, backgroundPosition:'center' ,backgroundSize:"contain" ,backgroundRepeat:"no-repeat"}}>
-     
-    </div>
-    <div class="carousel-item card-3" style={{background:`url("https://cdn.pixabay.com/photo/2016/05/06/16/32/car-1376190__340.jpg")`, backgroundPosition:'center',backgroundSize:'cortain' ,backgroundRepeat:"no-repeat"}}>
-    
-    </div>
-
- 
-  
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
+   </div>
 </div>
 
 
@@ -92,13 +83,14 @@ console.log(car.length);
         <br/>
         <i class="fas fa-angle-left"></i>
         
-        <span>6</span>
+        <span></span>
         
-        <i class="fas fa-angle-right"></i>
+        <i onClick={() => dispatch(addItem(car)) } class="fas fa-angle-right"></i>
         <br />
         <br />
         <br />
-        <span className="price">Price: </span>
+        <div >&#10005;</div>
+        <span className="price">Price: {car.PurchasePrice}</span>
         
         <br/>
         <br/>
